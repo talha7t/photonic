@@ -1,15 +1,43 @@
 const search = document.getElementById("search");
 const apiLink = `https://api.unsplash.com/search/photos/`;
 const id = `yXosKodc6mXgrNe8stN7vlRpIcg3KSARQ9V3UispyoU`;
+const imageMainContainer = document.getElementById("img-main-container");
+const moreImages = document.querySelector(".more-images-button");
+
+/*-----------------EVENT LISTENERS------------------------ */
 
 search.addEventListener("click", () => {
-  const searchTerm = document.querySelector(".search-term").value;
-  getImages(searchTerm);
+  imageMainContainer.innerHTML = "";
+  getImages();
 });
 
-function getImages(term) {
+moreImages.addEventListener("click", getImages);
+
+/*--------------------FUNCTIONS--------------------- */
+
+//function to get images from unsplash API
+async function getImages() {
+  const term = document.querySelector(".search-term").value;
   let url = `${apiLink}?client_id=${id}&query=${term}`;
-  fetch(url)
-    .then((res) => res.json())
-    .then((data) => console.log(data.results));
+
+  const response = await fetch(url).then((res) => res.json());
+
+  generateImages(response);
+  moreImages.style.display = "block";
+}
+
+//function to render Images
+function generateImages(data) {
+  data.results.forEach((pic) => {
+    console.log(pic);
+    const imgContainer = document.createElement("div");
+    const image = document.createElement("img");
+
+    image.src = pic.urls.regular;
+    imgContainer.classList.add("img-container");
+    image.classList.add("image");
+
+    imageMainContainer.appendChild(imgContainer);
+    imgContainer.appendChild(image);
+  });
 }
