@@ -71,11 +71,11 @@ main {
 
 #img-main-container {
   margin: 2rem 5vw;
-  min-height: 75vh;
+  // min-height: 50vh;
   display: grid;
   justify-items: center;
   align-content: center;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
   grid-gap: 2rem;
