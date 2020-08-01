@@ -97,14 +97,13 @@ main #search-bar #search img {
 
 #img-main-container {
   margin: 2rem 5vw;
-  min-height: 75vh;
   display: -ms-grid;
   display: grid;
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  -ms-grid-columns: (400px)[3];
-      grid-template-columns: repeat(3, 400px);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
