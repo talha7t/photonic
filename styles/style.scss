@@ -7,7 +7,6 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #fff;
 }
 
 header {
@@ -83,9 +82,8 @@ main {
 
 .img-container {
   width: 100%;
-  height: 500px;
+  height: 30rem;
   overflow: hidden;
-  // box-shadow: 2px 2px 16px -7px rgba(0, 0, 0, 0.75);
   transition: all 0.5s ease-in-out;
   &:hover {
     box-shadow: 3px 3px 13px -3px rgba(0, 0, 0, 0.75);
@@ -128,13 +126,13 @@ main {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 576px) {
   main #search-bar input {
-    width: 90%;
+    width: 100%;
   }
-  #img-main-container {
+  main #img-main-container {
     grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    grid-row-gap: 1rem;
   }
 }
 
@@ -154,6 +152,6 @@ main {
   }
   #img-main-container {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 3rem;
+    grid-gap: 2rem;
   }
 }
