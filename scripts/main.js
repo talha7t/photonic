@@ -29,15 +29,18 @@ async function getImages() {
 //function to render Images
 function generateImages(data) {
   data.results.forEach((pic) => {
-    console.log(pic);
     const imgContainer = document.createElement("div");
     const image = document.createElement("img");
+    const link = document.createElement("a");
 
     image.src = pic.urls.regular;
+    link.setAttribute("target", "_blank");
+    link.href = pic.urls.regular;
     imgContainer.classList.add("img-container");
     image.classList.add("image");
 
     imageMainContainer.appendChild(imgContainer);
-    imgContainer.appendChild(image);
+    imgContainer.appendChild(link);
+    link.appendChild(image);
   });
 }
