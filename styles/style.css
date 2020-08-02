@@ -202,7 +202,7 @@ main #search-bar #search img {
 
 @media only screen and (min-width: 1660px) {
   main #search-bar input {
-    width: 70%;
+    width: 60%;
   }
   #img-main-container {
     -ms-grid-columns: repeat(4, 1fr);
