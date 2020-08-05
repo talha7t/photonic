@@ -3,6 +3,7 @@ const apiLink = `https://api.unsplash.com/search/photos/`;
 const id = `yXosKodc6mXgrNe8stN7vlRpIcg3KSARQ9V3UispyoU`;
 const imageMainContainer = document.getElementById("img-main-container");
 const moreImages = document.querySelector(".more-images-button");
+var searchBar = document.getElementById("search-bar");
 
 /*-----------------EVENT LISTENERS------------------------ */
 
@@ -12,6 +13,12 @@ search.addEventListener("click", () => {
 });
 
 moreImages.addEventListener("click", getImages);
+
+searchBar.addEventListener("submit", (e) => {
+  e.preventDefault();
+  imageMainContainer.innerHTML = "";
+  getImages();
+});
 
 /*--------------------FUNCTIONS--------------------- */
 
